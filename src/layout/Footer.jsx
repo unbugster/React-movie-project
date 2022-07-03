@@ -10,4 +10,4 @@ function Footer() {
         </footer>
     )
 }
-export { Footer }
+export { Footer };

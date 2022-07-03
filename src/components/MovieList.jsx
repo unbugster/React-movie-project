@@ -1,4 +1,4 @@
-import { Movie } from './Movie'
+import { Movie } from './Movie';
 
 function MovieList({ movies }) {
 
@@ -11,4 +11,4 @@ function MovieList({ movies }) {
     )
 }
 
-export { MovieList }
+export { MovieList };

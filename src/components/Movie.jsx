@@ -5,6 +5,7 @@ function Movie({
     Type: type,
     Poster: poster
 }) {
+
     return (
         <div id={id} className="card movie">
             <div className="card-image waves-effect waves-block waves-light">
@@ -30,4 +31,4 @@ function Movie({
     )
 }
 
-export { Movie }
+export { Movie };

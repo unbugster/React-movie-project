@@ -8,4 +8,4 @@ function Preloader() {
     )
 }
 
-export { Preloader }
+export { Preloader };
