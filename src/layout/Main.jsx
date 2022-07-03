@@ -1,7 +1,7 @@
 import React from "react"
 import { MovieList } from '../components/MovieList'
 import { Preloader } from "../components/Preloader";
-import { Search } from "../components/search";
+import { Search } from "../components/Search";
 
 class Main extends React.Component {
     state = {
@@ -16,11 +16,14 @@ class Main extends React.Component {
             })
     }
 
-    searchMovies = (str) => {
-        fetch(`http://www.omdbapi.com/?apikey=f67062&s=${str}`)
+    searchMovies = (str, type = 'all') => {
+        const searchType = type !== 'all' ? `&type=${type}` : '';
+        const newUrl = `http://www.omdbapi.com/?apikey=f67062&s=${str}${searchType}`;
+
+        fetch(newUrl)
             .then(res => res.json())
             .then(data => {
-                this.setState({ movies: data.Search })
+                this.setState({ movies: data.Search });
             })
     }
 
