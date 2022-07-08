@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/unbugster.github.io/React-movie-project/static/css/main.954e7325.css",
+    "main.js": "/unbugster.github.io/React-movie-project/static/js/main.1420ba16.js",
+    "index.html": "/unbugster.github.io/React-movie-project/index.html",
+    "main.954e7325.css.map": "/unbugster.github.io/React-movie-project/static/css/main.954e7325.css.map",
+    "main.1420ba16.js.map": "/unbugster.github.io/React-movie-project/static/js/main.1420ba16.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.954e7325.css",
+    "static/js/main.1420ba16.js"
+  ]
+}
