@@ -12,24 +12,33 @@ class Main extends React.Component {
     }
 
     componentDidMount() {
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=matrix`)
+        console.log(process.env.REACT_APP_API_KEY)
+        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=matrix`)
             .then(res => res.json())
             .then(data => {
                 this.setState({ movies: data.Search, loading: false })
             })
-    }
+            .catch((err) => {
+                console.log(err);
+                this.setState({ loading: false })
+            });
+    };
 
     searchMovies = (str, type = 'all') => {
         this.setState({ loading: true });
         const searchType = type !== 'all' ? `&type=${type}` : '';
-        const newUrl = `http://www.omdbapi.com/?apikey=${API_KEY} &s=${str}${searchType}`;
+        const newUrl = `https://www.omdbapi.com/?apikey=${API_KEY}&s=${str}${searchType}`;
 
         fetch(newUrl)
             .then(res => res.json())
             .then(data => {
                 this.setState({ movies: data.Search, loading: false });
             })
-    }
+            .catch((err) => {
+                console.log(err);
+                this.setState({ loading: false })
+            });
+    };
 
     render() {
         const { movies, loading } = this.state;
@@ -45,8 +54,8 @@ class Main extends React.Component {
 
             </main>
         )
-    }
+    };
 
-}
+};
 
 export { Main };
